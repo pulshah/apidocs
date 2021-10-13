@@ -1,0 +1,61 @@
+---
+openapi: 3.0.1
+info:
+  title: defaultTitle
+  description: defaultDescription
+  version: "0.1"
+servers:
+- url: http://localhost:8080
+paths:
+  /most-endorsed:
+    get:
+      description: Auto generated using Swagger Inspector
+      parameters:
+      - name: userId
+        in: header
+        required: false
+        style: simple
+        explode: false
+        schema:
+          type: string
+        example: "1"
+      responses:
+        "200":
+          description: Auto generated using Swagger Inspector
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/inline_response_200'
+              examples:
+                "0":
+                  value: '{"traceId":"60e1670fefeaf405","timestamp":1601187942925,"path":"/most-endorsed","status":200,"data":[{"type":"ASSET","title":"CodeGen","id":2,"count":3},{"type":"STANDARD","title":"CodeGenTool","id":6,"count":3},{"type":"TOOL","title":"CodeGenTool","id":4,"count":3},{"type":"TRAINING","title":"CodeGenTool","id":9,"count":3}]}'
+      servers:
+      - url: http://localhost:8080
+    servers:
+    - url: http://localhost:8080
+components:
+  schemas:
+    inline_response_200:
+      type: object
+      properties:
+        traceId:
+          type: string
+        path:
+          type: string
+        data:
+          type: array
+          items:
+            type: object
+            properties:
+              count:
+                type: integer
+              id:
+                type: integer
+              type:
+                type: string
+              title:
+                type: string
+        timestamp:
+          type: number
+        status:
+          type: integer
